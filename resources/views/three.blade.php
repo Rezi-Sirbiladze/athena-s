@@ -1,36 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.base-layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Three</title>
-    <style>
-        body {
-            margin: 0;
-        }
+@section('title', 'Three 🌲')
 
-        #info {
-            position: absolute;
-            top: 10px;
-            width: 100%;
-            text-align: center;
-            z-index: 100;
-            display: block;
-            color: white;
-            font-family: courier;
-        }
-    </style>
-</head>
-
-<body>
-    <div id="info">Description</div>
+@section('content')
+    <div id="contenido" class="container"></div>
     <script src="{{asset('js/three.js')}}"></script>
     <script>
         three_line_animate();
         three_cube();
-        three_line();
+        three_triangle();
 
         function three_cube(){
             const scene = new THREE.Scene();
@@ -45,7 +23,7 @@
 
             const renderer = new THREE.WebGLRenderer();
             renderer.setSize( window.innerWidth, window.innerHeight );
-            document.body.appendChild( renderer.domElement );
+            document.getElementById("contenido").appendChild( renderer.domElement );
 
             const geometry = new THREE.BoxGeometry( 2, 2, 2 );
             const material = new THREE.MeshBasicMaterial( { color: 0xA569BD } );
@@ -65,7 +43,7 @@
             animate();
         }
 
-        function three_line(){
+        function three_triangle(){
             const scene = new THREE.Scene();
 
             const camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
@@ -78,7 +56,7 @@
 
 
 
-            const material = new THREE.LineBasicMaterial( { color: 0x0000ff } );
+            const material = new THREE.LineBasicMaterial( { color: 0xC92750 } );
 
             const points = [];
             points.push( new THREE.Vector3( - 10, 0, 0 ) );
@@ -92,7 +70,15 @@
             const line = new THREE.Line( geometry, material );
 
             scene.add( line );
-            renderer.render( scene, camera );
+
+
+            function animate(){
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+                line.rotation.x += 0.02;
+                line.rotation.y += 0.01;
+            }
+            animate();
         }
 
         function three_line_animate(){
@@ -214,6 +200,5 @@
         }
 
     </script>
-</body>
 
-</html>
+@endsection
