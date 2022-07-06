@@ -22,16 +22,24 @@
             const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
             const renderer = new THREE.WebGLRenderer();
-            renderer.setSize( window.innerWidth, window.innerHeight );
-            document.getElementById("contenido").appendChild( renderer.domElement );
+            renderer.setSize(window.innerWidth-17, window.innerHeight );
+            //document.getElementById("contenido").appendChild( renderer.domElement );
+            document.body.appendChild( renderer.domElement );
+
+
+            window.addEventListener('resize', function(){
+                let width = window.innerWidth-17;
+                let height = window.innerHeight;
+                renderer.setSize(width, height);
+            });
 
             const geometry = new THREE.BoxGeometry( 2, 2, 2 );
-            const material = new THREE.MeshBasicMaterial( { color: 0xA569BD } );
+            const material = new THREE.MeshToonMaterial( { color: 0x000000 } );
             const cube = new THREE.Mesh( geometry, material );
             scene.add( cube );
 
-            cube.position.y = 1;
-            cube.position.x = -1; 
+            cube.position.y = 0;
+            cube.position.x = 0; 
             camera.position.z = 5;
 
             function animate() {
@@ -51,10 +59,14 @@
             camera.lookAt( 0, 0, 0 );
 
             const renderer = new THREE.WebGLRenderer();
-            renderer.setSize( window.innerWidth, window.innerHeight );
+            renderer.setSize( window.innerWidth-17, window.innerHeight );
             document.body.appendChild( renderer.domElement );
 
-
+            window.addEventListener('resize', function(){
+                let width = window.innerWidth-17;
+                let height = window.innerHeight;
+                renderer.setSize(width, height);
+            });
 
             const material = new THREE.LineBasicMaterial( { color: 0xC92750 } );
 
@@ -111,8 +123,15 @@
                 // renderer
                 renderer = new THREE.WebGLRenderer();
                 renderer.setPixelRatio( window.devicePixelRatio );
-                renderer.setSize( window.innerWidth, window.innerHeight );
+                renderer.setSize( window.innerWidth-17, window.innerHeight );
                 document.body.appendChild( renderer.domElement );
+
+                window.addEventListener('resize', function(){
+                    let width = window.innerWidth-17;
+                    let height = window.innerHeight;
+                    renderer.setSize(width, height);
+                });
+
 
                 // scene
                 scene = new THREE.Scene();

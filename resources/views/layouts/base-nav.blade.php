@@ -1,5 +1,5 @@
 <div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); height: 100vh">
-    <div>
+    <div data-aos="fade-down" data-aos-duration="1000">
         <h1>Hola mundo</h1>
         <nav class="navbar navbar-expand-lg navbar-light">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
