@@ -4,21 +4,21 @@
 
 @section('content')
 
-    <div class="container mt-5 mb-5">
+    <div class="container">
 
-        <div class="row">
-            <div class="col-md-5" data-aos="fade-up" data-aos-duration="1000">    
+        <div class="row align-items-center pt-5">
+            <div class="col-md-6 text-center " data-aos="fade-up" data-aos-duration="1000">    
                 <h1>Hey! Soy Rezi ⚡</h1>
                 <p>
                     Soy full stack developer, puedo encargarme de diseñar tu página web (frontend) personalizada a tu gusto y conectarlo al backend si es necesario, a su vez también puedo conectar a un base de datos para almacenar algunos datos para luego poder analizar en backend.
                 </p>
             </div>
-            <div data-tilt class="col-md-5 offset-md-2 justify-content-center text-center" data-aos="fade-up" data-aos-duration="1000">
+            <div data-tilt class="col-md-6 justify-content-center text-center">
                 <img src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 500px">
             </div>
         </div>
 
-        <div class="row justify-content-end text-end mt-5">
+        <div class="row justify-content-end text-center align-items-center mt-5">
             <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">    
                 <h1>Experiencia 📚</h1>
                 <p>
@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-5 text-center align-items-center">
             <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">    
                 <h1>Lenguajes 🔥</h1>
                 <p>

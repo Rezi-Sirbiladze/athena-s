@@ -26,9 +26,49 @@
             /* transition-duration: inherit;
             transition-duration: 500ms; */
         }
+        .container {
+            background-image: url("{{asset('img/webb.png')}}");
+            box-shadow: 0px 20px 50px grey;
+            border-radius: 10px;
+        }
+        canvas{
+
+            margin-left: 0.20%;
+        }
+
         p{
             font-size: 150%;
         }
+        /* scroll bar */
+        body::-webkit-scrollbar {
+            width: 0.5em;
+            height: 0.5em;
+            background-color: black;
+        }
+        
+        body::-webkit-scrollbar-thumb {
+            background-color: #4e1511;
+            outline: 1px solid #4e1511;
+            border-radius: 10px;
+        }
+        /* scroll bar */
+
+        #titulo{
+        font-size:6vw;
+        letter-spacing:0.2em;
+        text-decoration:none;
+        color:white;
+        background:linear-gradient(to right,#363636 0%,#363636 100%);
+        background-repeat: no-repeat;
+        background-position: left 100%;
+        transition-duration: 1s;
+        background-size: 0 6%;
+        }
+        #titulo:hover{
+            background-size:100% 6%;
+            color: #363636;
+        }
+ 
     </style>
 </head>
 <body>
