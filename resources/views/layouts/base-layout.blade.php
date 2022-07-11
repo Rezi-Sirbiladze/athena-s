@@ -75,7 +75,7 @@
     @include('layouts.base-nav')
     @yield('content')
 
-    <footer>
+    <footer class="mt-5">
         <div class="container-fluid  bg-black">
             <div class="row">
                 <ul class="nav justify-content-end align-items-center" style="height: 100px;">
