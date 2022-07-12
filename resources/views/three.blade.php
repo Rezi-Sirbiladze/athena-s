@@ -6,6 +6,8 @@
     <div id="contenido" class="container"></div>
     <script src="{{asset('js/three.js')}}"></script>
     <script>
+
+        
         three_line_animate();
         three_cube();
         three_triangle();
@@ -34,13 +36,15 @@
             });
 
             const geometry = new THREE.BoxGeometry( 2, 2, 2 );
-            const material = new THREE.MeshToonMaterial( { color: 0x000000 } );
+            let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
             const cube = new THREE.Mesh( geometry, material );
             scene.add( cube );
+            window.onscroll = function() {cube.material.color.setHSL( Math.random(), 1, 0.5 )};
 
             cube.position.y = 0;
             cube.position.x = 0; 
             camera.position.z = 5;
+
 
             function animate() {
                 requestAnimationFrame( animate );
@@ -68,7 +72,7 @@
                 renderer.setSize(width, height);
             });
 
-            const material = new THREE.LineBasicMaterial( { color: 0xC92750 } );
+            let material = new THREE.LineBasicMaterial( { color: 0xC92750 } );
 
             const points = [];
             points.push( new THREE.Vector3( - 10, 0, 0 ) );
@@ -82,7 +86,7 @@
             const line = new THREE.Line( geometry, material );
 
             scene.add( line );
-
+            //window.onscroll = function() {line.material.color.setHSL( Math.random(), 1, 0.5 )};
 
             function animate(){
                 requestAnimationFrame(animate);
