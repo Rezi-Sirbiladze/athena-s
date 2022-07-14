@@ -27,19 +27,48 @@
             </div>
         </div>
 
-        <div class="row mt-5 text-center align-items-center">
-            <div class="col-md-6" data-aos="fade-up" data-aos-duration="1000">    
+        <div class="row mt-12 text-center align-items-center">
+            <div class="col-md-12" >    
                 <h1>Lenguajes 🔥</h1>
-                <p>
-                    HTML5 <br>
-                    CSS <br>
-                    JavaScript ES6 <br>
-                    PHP <br>
-                    Java <br>                 
-                </p>
+
+                    <img class="demo-content animation-keyframes-demo1"  src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 400px"> 
+                    <img class="demo-content animation-keyframes-demo2" src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 400px"> 
+                    <img src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 400px">
+                    <img src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 400px">
+                    <img src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 400px">
+                    <img src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 400px">   
+                    <img src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 400px">  
+                    <img src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 400px">     
+
             </div>
         </div>
 
+
     </div>
 
+    <script>
+    anime({
+    targets: '.animation-keyframes-demo1 ',
+    keyframes: [
+
+        {translateX: 300},
+        {translateX: 0}
+    ],
+    duration: 8000,
+    easing: 'easeOutElastic(1, .8)',
+    loop: true
+    });
+
+    anime({
+    targets: '.animation-keyframes-demo2 ',
+    keyframes: [
+
+        {translateY: 300},
+        {translateY: 0}
+    ],
+    duration: 8000,
+    easing: 'easeOutElastic(1, .8)',
+    loop: true
+    });
+    </script>
 @endsection

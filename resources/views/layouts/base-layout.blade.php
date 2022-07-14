@@ -19,10 +19,12 @@
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <script src={{asset("js/anime.min.js")}}></script>
 
     <style>
         * {
             font-family: courier;
+            border: 1px solid #000;
             /* transition-duration: inherit;
             transition-duration: 500ms; */
         }
@@ -116,5 +118,6 @@
     <script>
         AOS.init();
     </script>
+    
 </body>
 </html>

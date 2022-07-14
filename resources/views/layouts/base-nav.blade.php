@@ -18,7 +18,7 @@
         </div>
     </div>
 </nav>
-<script src={{asset("js/anime.min.js")}}></script>
+
 <script>
 anime({
     targets: '#titulo',

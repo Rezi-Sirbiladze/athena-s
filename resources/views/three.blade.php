@@ -6,8 +6,9 @@
     <div id="contenido" class="container"></div>
     <script src="{{asset('js/three.js')}}"></script>
     <script>
+        let colorRandom;
+        window.onscroll = function() {colorRandom = Math.random()};
 
-        
         three_line_animate();
         three_cube();
         three_triangle();
@@ -18,8 +19,6 @@
             scene.fog = new THREE.Fog("white", 0.1, 12);
             const loader = new THREE.TextureLoader();
             loader.load("{{asset('img/bc.jpg')}}", texture => scene.background = texture);
-
-
 
             const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -39,14 +38,14 @@
             let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
             const cube = new THREE.Mesh( geometry, material );
             scene.add( cube );
-            window.onscroll = function() {cube.material.color.setHSL( Math.random(), 1, 0.5 )};
+            cube.material.color.setHSL( colorRandom, 1, 0.5 );
 
             cube.position.y = 0;
             cube.position.x = 0; 
             camera.position.z = 5;
 
-
             function animate() {
+                cube.material.color.setHSL( colorRandom, 1, 0.5 );
                 requestAnimationFrame( animate );
                 renderer.render( scene, camera );
                 cube.rotation.x += 0.01;
@@ -82,13 +81,11 @@
             points.push( new THREE.Vector3( -10, 0, 0 ) );
 
             const geometry = new THREE.BufferGeometry().setFromPoints( points );
-
             const line = new THREE.Line( geometry, material );
-
             scene.add( line );
-            //window.onscroll = function() {line.material.color.setHSL( Math.random(), 1, 0.5 )};
 
             function animate(){
+                line.material.color.setHSL( colorRandom, 1, 0.5 );
                 requestAnimationFrame(animate);
                 renderer.render(scene, camera);
                 line.rotation.x += 0.02;
@@ -109,7 +106,6 @@
             animate();
 
             function init() {
-
                 // info
                 const info = document.createElement( 'div' );
                 info.style.position = 'absolute';
@@ -164,19 +160,15 @@
 
                 // update positions
                 updatePositions();
-
             }
 
             // update positions
             function updatePositions() {
-
                 const positions = line.geometry.attributes.position.array;
-
                 let x, y, z, index;
                 x = y = z = index = 0;
 
                 for ( let i = 0, l = MAX_POINTS; i < l; i ++ ) {
-
                     positions[ index ++ ] = x;
                     positions[ index ++ ] = y;
                     positions[ index ++ ] = z;
@@ -184,41 +176,29 @@
                     x += ( Math.random() - 0.5 ) * 30;
                     y += ( Math.random() - 0.5 ) * 30;
                     z += ( Math.random() - 0.5 ) * 30;
-
                 }
-
             }
 
             // render
             function render() {
-
                 renderer.render( scene, camera );
-
             }
 
             // animate
             function animate() {
 
                 requestAnimationFrame( animate );
-
                 drawCount = ( drawCount + 1 ) % MAX_POINTS;
-
                 line.geometry.setDrawRange( 0, drawCount );
 
                 if ( drawCount === 0 ) {
-
                     // periodically, generate new data
-
                     updatePositions();
-
                     line.geometry.attributes.position.needsUpdate = true; // required after the first render
-
                     line.material.color.setHSL( Math.random(), 1, 0.5 );
 
                 }
-
                 render();
-
             }
         }
 
