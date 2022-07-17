@@ -1,11 +1,9 @@
 <div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); height: 100vh">
     <div data-aos="fade-down" data-aos-duration="1000">
         <h1 id="titulo">Hola mundo</h1>
-        
     </div>
-    
 </div>
-<nav class="navbar navbar-expand-lg navbar-light justify-content-center align-items-center">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light justify-content-center align-items-center" style="background-color: white">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -18,7 +16,7 @@
         </div>
     </div>
 </nav>
-
+<br>
 <script>
 anime({
     targets: '#titulo',
