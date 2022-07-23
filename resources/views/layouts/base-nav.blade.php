@@ -1,4 +1,4 @@
-<div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); height: 100vh">
+<div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); height: 60vh">
     <div data-aos="fade-down" data-aos-duration="1000">
         <h1 id="titulo">Hola mundo</h1>
     </div>

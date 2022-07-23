@@ -39,7 +39,7 @@
             transition-duration: 500ms; */
         }
         .container {
-            background-image: url("{{asset('img/webb.png')}}");
+            /* background-image: url("{{asset('img/webb.png')}}"); */
             box-shadow: 0px 20px 50px grey;
             border-radius: 10px;
         }

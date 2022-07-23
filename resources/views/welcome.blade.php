@@ -88,9 +88,8 @@ $('.autoplay').slick({
   autoplaySpeed: 1000,
   pauseOnFocus: false,
   infinite: true,
-  dots: true,
-
   centerPadding: '60px',
+  arrows: false,
   responsive: [
     {
       breakpoint: 1024,
@@ -98,7 +97,6 @@ $('.autoplay').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
       }
     },
     {
@@ -107,7 +105,6 @@ $('.autoplay').slick({
         slidesToShow: 2,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
       }
     },
     {
@@ -116,7 +113,6 @@ $('.autoplay').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
       }
     }
   ]
