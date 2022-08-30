@@ -64,22 +64,6 @@
             border-radius: 10px;
         }
         /* scroll bar */
-
-        #titulo{
-        font-size:6vw;
-        letter-spacing:0.2em;
-        text-decoration:none;
-        color:white;
-        background:linear-gradient(to right,#363636 0%,#363636 100%);
-        background-repeat: no-repeat;
-        background-position: left 100%;
-        transition-duration: 1s;
-        background-size: 0 6%;
-        }
-        #titulo:hover{
-            background-size:100% 6%;
-            color: #363636;
-        }
  
     </style>
 </head>
@@ -92,7 +76,8 @@
             <div class="row">
                 <ul class="nav justify-content-end align-items-center" style="height: 100px;">
                     <li>
-                        @if (Route::has('login'))
+                        By Rezi
+                        {{-- @if (Route::has('login'))
                             <div>
                                 @auth
                                     <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
@@ -105,7 +90,7 @@
                                     @endif
                                 @endauth
                             </div>
-                        @endif
+                        @endif --}}
                     </li>
                 </ul>
             </div>

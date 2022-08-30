@@ -12,6 +12,15 @@
     figcaption a {
       text-decoration: none;
     }
+
+    .autoplay img{
+      height: 200px;
+      width: 170px;
+    }
+
+    .row:not(:first-child){
+      padding-top: 100px;
+    }
   </style>
 
   <div class="container">
@@ -30,8 +39,8 @@
 
 
 
-    <div class="row justify-content-end text-center align-items-center pt-5">
-      <div data-tilt class="col-md-6 justify-content-center text-center">
+    <div class="row justify-content-end text-center align-items-center">
+      <div data-tilt class="col-md-6 order-md-first order-last justify-content-center text-center">
         <figure>
           <img src="{{asset("img/exp.jpg")}}" class="img-fluid rounded" alt="Foto_de_Mitchell" style=" height : 400px; width : 400px">
           <figcaption>Foto de <a target="_blank" href="https://unsplash.com/@mitchel3uo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Mitchell Luo</a> en <a target="_blank" href="https://unsplash.com/es/s/fotos/dise%C3%B1o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -48,18 +57,18 @@
 
 
 
-    <div class="row mt-12 text-center align-items-center justify-content-center pt-5">
+    <div class="row mt-12 text-center align-items-center justify-content-center">
       <div class="col-md-11">    
         <h1>Skills 🔥</h1>
         <br>
         <div class="autoplay">
-          <div><img class="displayed" src="{{asset("img/skills/html5-logo.png")}}" class="img-fluid rounded" alt="html5-logo" style=" height : 200px"> HTML</div>
-          <div><img class="displayed" src="{{asset("img/skills/css-logo.png")}}" class="img-fluid rounded" alt="css-logo" style=" height : 200px"> CSS</div>
-          <div><img class="displayed" src="{{asset("img/skills/js-logo.png")}}" class="img-fluid rounded" alt="js-logo" style=" height : 200px"> JS</div>
-          <div><img class="displayed" src="{{asset("img/skills/jquery-logo.png")}}" class="img-fluid rounded" alt="jquery-logo" style=" height : 200px"> JQuery</div>
-          <div><img class="displayed" src="{{asset("img/skills/php-logo.png")}}" class="img-fluid rounded" alt="php-logo" style=" height : 200px"> PHP</div>
-          <div><img class="displayed" src="{{asset("img/skills/mysql-logo.png")}}" class="img-fluid rounded" alt="mysql-logo" style=" height : 200px"> MySQL</div>
-          <div><img class="displayed" src="{{asset("img/skills/laravel-logo.png")}}" class="img-fluid rounded" alt="laravel-logo" style=" height : 200px"> Laravel</div>
+          <div><img class="displayed" src="{{asset("img/skills/html5-logo.png")}}" class="img-fluid rounded" alt="html5-logo"> HTML</div>
+          <div><img class="displayed" src="{{asset("img/skills/css-logo.png")}}" class="img-fluid rounded" alt="css-logo"> CSS</div>
+          <div><img class="displayed" src="{{asset("img/skills/js-logo.png")}}" class="img-fluid rounded" alt="js-logo"> JS</div>
+          <div><img class="displayed" src="{{asset("img/skills/jquery-logo.png")}}" class="img-fluid rounded" alt="jquery-logo"> JQuery</div>
+          <div><img class="displayed" src="{{asset("img/skills/php-logo.png")}}" class="img-fluid rounded" alt="php-logo"> PHP</div>
+          <div><img class="displayed" src="{{asset("img/skills/mysql-logo.png")}}" class="img-fluid rounded" alt="mysql-logo"> MySQL</div>
+          <div><img class="displayed" src="{{asset("img/skills/laravel-logo.png")}}" class="img-fluid rounded" alt="laravel-logo"> Laravel</div>
         </div>
       </div>
     </div>
@@ -67,7 +76,7 @@
 
 
 
-    <div class="row mt-12 text-center align-items-center justify-content-center pt-5 pb-5">
+    <div class="row mt-12 text-center align-items-center justify-content-center pb-5">
       <div class="col-md-11" data-aos="fade-up" data-aos-duration="1000">    
         <h1>Contacto 📥</h1>
         <br>
@@ -92,6 +101,7 @@
 
   </div>
 
+  {{-- Slider --}}
   <script>
     $('.autoplay').slick
     ({
