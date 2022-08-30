@@ -80,7 +80,11 @@
       <div class="col-md-11" data-aos="fade-up" data-aos-duration="1000">    
         <h1>Contacto 📥</h1>
         <br>
-
+        @if (Session::has('message'))
+          <div class="alert alert-success" role="alert">
+            Email Enviado
+          </div>
+        @endif
         <form method="POST" action="{{route("stonksMail")}}">
           @csrf
           <div class="mb-3">

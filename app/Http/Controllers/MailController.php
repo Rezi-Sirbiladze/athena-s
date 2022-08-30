@@ -22,5 +22,7 @@ class MailController extends Controller
         $mensaje = "Hola Maquina,\n \n$name - $mail te manda un mensaje: \n \n$text";
 
         $this->emailService->envio_alumno_sendinblue("Stonks", $mensaje, "rezi.sirbiladze2@gmail.com");
+
+        return redirect()->back()->with('message', ucfirst($request["tipoenvio"]) . ' enviado');
     }
 }
