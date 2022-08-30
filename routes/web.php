@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ Route::get('/', function () {
 Route::get('three', function () {
     return view('three');
 })->name("three");
+
+Route::post('stonksMail', [MailController::class, 'send_mail'])->name('stonksMail');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

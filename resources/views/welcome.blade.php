@@ -80,21 +80,24 @@
       <div class="col-md-11" data-aos="fade-up" data-aos-duration="1000">    
         <h1>Contacto 📥</h1>
         <br>
-        <form>
+
+        <form method="POST" action="{{route("stonksMail")}}">
+          @csrf
           <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" placeholder="Rezi" name="name" required>
+            <input type="text" class="form-control" placeholder="Rezi" name="name" required>
           </div>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="hola@mundo.com" required>
+            <label for="mail" class="form-label">Email</label>
+            <input type="mail" class="form-control" aria-describedby="mailHelp" name="mail" placeholder="hola@mundo.com" required>
           </div>
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="texto" required></textarea>
+            <label for="textArea" class="form-label">Mensaje</label>
+            <textarea class="form-control" rows="3" name="text" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
       </div>
     </div>
 
