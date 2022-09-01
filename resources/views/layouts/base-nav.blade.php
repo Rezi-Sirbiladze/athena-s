@@ -55,7 +55,7 @@
                     <a class="nav-link" href="{{route("welcome")}}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         Features
                     </a>
                     <ul class="dropdown-menu">
