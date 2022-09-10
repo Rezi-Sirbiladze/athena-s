@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\GeneralMail;
 
 
-
 class EmailService
 {
   function envio_alumno_sendinblue($subject, $message, $email){
@@ -20,6 +19,5 @@ class EmailService
     $objContact->view = 'mails.generalMail';
 
     $mail_contacto = Mail::to($email)->send(new GeneralMail($objContact));
-
   }
 }

@@ -21,6 +21,16 @@
     .row:not(:first-child){
       padding-top: 100px;
     }
+
+    #g-recaptcha-response {
+    display: block !important;
+    position: absolute;
+    margin: -115px 0 0 -50px !important;
+    width: 302px !important;
+    height: 76px !important;
+    z-index: -999999;
+    opacity: 0;
+}
   </style>
 
   <div class="container">
@@ -82,9 +92,15 @@
         <br>
         @if (Session::has('message'))
           <div class="alert alert-success" role="alert">
-            Email Enviado
+            {{ Session::get('message') }}
           </div>
         @endif
+        @if (Session::has('error'))
+          <div class="alert alert-warning" role="alert">
+            {{ Session::get('error') }}
+          </div>
+        @endif
+
         <form method="POST" action="{{route("stonksMail")}}">
           @csrf
           <div class="mb-3">
@@ -99,7 +115,10 @@
             <label for="textArea" class="form-label">Mensaje</label>
             <textarea class="form-control" rows="3" name="text" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="mb-3"style="width: 304px; margin: auto;" data-aos="fade-up" data-aos-duration="1000">
+            <div class="g-recaptcha" data-sitekey="6Le_beohAAAAAKTH12kfCCOJXclQkfsbtErzFvdP"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" data-aos="fade-up" data-aos-duration="1000">Submit</button>
         </form>
 
       </div>
@@ -107,6 +126,19 @@
 
 
   </div>
+  
+
+  {{-- Google ReCaptcha --}}
+  <script>
+    window.onload = function() {
+      var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+      if($recaptcha) {
+          $recaptcha.setAttribute("required", "required");
+      }
+    };
+  </script>
+
 
   {{-- Slider --}}
   <script>
