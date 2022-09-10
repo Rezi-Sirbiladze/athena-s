@@ -43,7 +43,7 @@
         </p>
       </div>
       <div data-tilt class="col-md-6 justify-content-center text-center">
-        <img src="{{asset("img/profile.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 500px">
+        <img src="{{asset("img/rezi_img.png")}}" class="img-fluid rounded" alt="profile_img" style=" height : 500px">
       </div>
     </div>
 
